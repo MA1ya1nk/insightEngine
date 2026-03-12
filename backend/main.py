@@ -45,6 +45,10 @@ class ApprovalRequest(BaseModel):
 pending_approvals: dict[str, asyncio.Event] = {}
 approval_decisions: dict[str, dict] = {}
 
+@app.get("/api/health")
+async def health_check():
+    return {"status": "ok", "timestamp": datetime.utcnow().isoformat()}
+
 @app.websocket("/ws/{session_id}")
 async def websocket_endpoint(websocket: WebSocket, session_id: str):
     await websocket.accept()
