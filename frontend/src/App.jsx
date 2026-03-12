@@ -236,12 +236,12 @@
 import { useState, useRef, useCallback } from "react";
 import { API_BASE, WS_BASE } from "./components/Constants";
 import Navbar from "./components/Navbar";
-import ResearchInput from "./components/ResearchInput";
-import AgentDashboard from "./components/AgentDashboard";
-import LiveStream from "./components/LiveStream";
-import ReportView from "./components/ReportView";
-import ApprovalModal from "./components/ApprovalModal";
-import HistoryView from "./components/HistoryView";
+import ResearchInput from "./components/Researchinput";
+import AgentDashboard from "./components/Agentdashboard";
+import LiveStream from "./components/Livestream";
+import ReportView from "./components/Reportview";
+import ApprovalModal from "./components/Approvalmodal";
+import HistoryView from "./components/Historyview";
 import { IconCheck } from "./components/Icons";
 
 export default function App() {
