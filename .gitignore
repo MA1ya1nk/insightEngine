@@ -1,0 +1,95 @@
+# ── Python ────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+
+# Virtual Environment
+venv/
+env/
+.env/
+.venv/
+
+# Distribution / Packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# ── Environment Variables (NEVER commit API keys) ─────────
+.env
+*.env
+!.env.example
+
+# ── Database ───────────────────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+insightengine.db
+
+# ── PDF Outputs (temporary generated files) ───────────────
+*.pdf
+/tmp/
+
+# ── Node / Frontend ────────────────────────────────────────
+node_modules/
+dist/
+build/
+.pnp
+.pnp.js
+
+# Vite
+.vite/
+vite.config.js.timestamp-*
+
+# Package lock files (keep only one)
+# Uncomment the one you DON'T use:
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ── IDE & Editor ───────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Logs ───────────────────────────────────────────────────
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ── OS Files ───────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ── Testing ────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+coverage/
+*.cover
+
+# ── Misc ───────────────────────────────────────────────────
+*.bak
+*.tmp
+*.temp
+.cache/
