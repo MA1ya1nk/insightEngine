@@ -1,4 +1,4 @@
-import { AGENTS } from "./constants";
+import { AGENTS } from "./Constants";
 
 const PulsingDot = ({ color }) => (
   <span className="relative flex h-3 w-3">

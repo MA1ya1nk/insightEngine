@@ -175,7 +175,7 @@
 
 
 import { useState } from "react";
-import { API_BASE } from "./constants";
+import { API_BASE } from "./Constants";
 import { IconBrain, IconCheck, IconX } from "./Icons";
 
 export default function ApprovalModal({ plan, sessionId, onDecision }) {

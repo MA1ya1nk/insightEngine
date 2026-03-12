@@ -1,5 +1,5 @@
 import { IconArrow } from "./Icons";
-import { EXAMPLES } from "./constants";
+import { EXAMPLES } from "./Constants";
 
 export default function ResearchInput({ topic, setTopic, onStart }) {
   return (

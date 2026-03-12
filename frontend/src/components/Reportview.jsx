@@ -1,4 +1,4 @@
-import { API_BASE } from "./constants";
+import { API_BASE } from "./Constants";
 import { IconDownload } from "./Icons";
 
 export default function ReportView({ report, sessionId }) {

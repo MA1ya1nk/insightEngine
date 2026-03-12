@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { API_BASE, STATUS_COLORS } from "./constants";
+import { API_BASE, STATUS_COLORS } from "./Constants";
 import { IconHistory } from "./Icons";
 
 export default function HistoryView({ onSelect }) {
