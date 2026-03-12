@@ -195,8 +195,36 @@ async def run_research_pipeline(session_id: str, topic: str, send_update: Callab
 
         if not decision["approved"]:
             if decision.get("modifications"):
+                # Re-run manager with modified topic
                 topic = f"{topic}. Additional context: {decision['modifications']}"
                 plan = await manager_agent(session_id, topic, send_update)
+
+                # Send new awaiting_approval so modal reappears on frontend
+                save_session(session_id, topic, "awaiting_approval")
+                await send_update(session_id, {
+                    "type": "awaiting_approval",
+                    "agent": "System",
+                    "plan": plan,
+                    "message": "Updated research plan ready. Please review and approve."
+                })
+
+                # Wait for second approval
+                approval_event2 = asyncio.Event()
+                pending_approvals[session_id] = approval_event2
+                try:
+                    await asyncio.wait_for(approval_event2.wait(), timeout=600)
+                except asyncio.TimeoutError:
+                    await send_update(session_id, {"type": "error", "message": "Approval timeout. Research cancelled."})
+                    save_session(session_id, topic, "cancelled")
+                    return
+
+                decision2 = approval_decisions.pop(session_id, {"approved": True})
+                pending_approvals.pop(session_id, None)
+
+                if not decision2["approved"]:
+                    await send_update(session_id, {"type": "cancelled", "message": "Research cancelled by user."})
+                    save_session(session_id, topic, "cancelled")
+                    return
             else:
                 await send_update(session_id, {"type": "cancelled", "message": "Research cancelled by user."})
                 save_session(session_id, topic, "cancelled")
