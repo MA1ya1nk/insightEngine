@@ -234,7 +234,7 @@
 
 
 import { useState, useRef, useCallback } from "react";
-import { API_BASE, WS_BASE } from "./components/constants";
+import { API_BASE, WS_BASE } from "./components/Constants";
 import Navbar from "./components/Navbar";
 import ResearchInput from "./components/ResearchInput";
 import AgentDashboard from "./components/AgentDashboard";
