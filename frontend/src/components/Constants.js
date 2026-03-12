@@ -31,11 +31,11 @@ import { IconBrain, IconSearch, IconPen, IconShield, IconSparkle } from "./Icons
 // ── Change this to your Render backend URL after deploying ──
 const IS_PRODUCTION = import.meta.env.PROD;
 export const API_BASE = IS_PRODUCTION
-  ? "https://your-app-name.onrender.com"   // ← Replace with your Render URL
+  ? "https://insightengine-zt7t.onrender.com"   // ← Replace with your Render URL
   : "http://localhost:8000";
 
 export const WS_BASE = IS_PRODUCTION
-  ? "wss://your-app-name.onrender.com"     // ← Same URL, just wss:// not https://
+  ? "wss://insightengine-zt7t.onrender.com"     // ← Same URL, just wss:// not https://
   : "ws://localhost:8000";
 
 export const AGENTS = {
